@@ -1,9 +1,11 @@
 /* ===============================
-   GLOBAL STYLES
+   GOOGLE FONTS
 =================================*/
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap');
 
+/* ===============================
+   GLOBAL RESET
+=================================*/
 *{
     margin:0;
     padding:0;
@@ -11,18 +13,29 @@
     scroll-behavior:smooth;
 }
 
+/* ===============================
+   PAGE FADE-IN
+=================================*/
 body{
     font-family:'Inter', sans-serif;
     background:#f8f6f2;
     color:#1f2933;
     line-height:1.7;
     padding-top:70px;
+
+    opacity:0;
+    animation: pageFade 0.9s ease forwards;
+}
+
+@keyframes pageFade{
+    to{
+        opacity:1;
+    }
 }
 
 /* ===============================
    NAVBAR
 =================================*/
-
 .navbar{
     position:fixed;
     top:0;
@@ -80,7 +93,6 @@ body{
 /* ===============================
    HERO SECTION
 =================================*/
-
 .hero{
     height:85vh;
     display:flex;
@@ -123,7 +135,6 @@ body{
 /* ===============================
    SECTIONS
 =================================*/
-
 .section{
     padding:90px 12%;
     max-width:1100px;
@@ -163,9 +174,58 @@ body{
 }
 
 /* ===============================
+   TIMELINE (Internships)
+=================================*/
+.timeline{
+    position: relative;
+    margin-top: 40px;
+    padding-left: 30px;
+    border-left: 2px solid #c6a75e;
+}
+
+.timeline-item{
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-dot{
+    position: absolute;
+    left: -10px;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    background: #c6a75e;
+    border-radius: 50%;
+}
+
+.timeline-content h3{
+    font-family:'Playfair Display', serif;
+    margin-bottom: 5px;
+}
+
+.timeline-content span{
+    font-size: 13px;
+    color: #64748b;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* ===============================
+   SCROLL GOLD PROGRESS LINE
+=================================*/
+.scroll-line{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: #c6a75e;
+    z-index: 100000;
+}
+
+/* ===============================
    FOOTER
 =================================*/
-
 footer{
     text-align:center;
     padding:30px;
@@ -177,7 +237,6 @@ footer{
 /* ===============================
    RESPONSIVE
 =================================*/
-
 @media(max-width:768px){
     .navbar ul{
         gap:15px;
