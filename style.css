@@ -1,36 +1,22 @@
 /* ===============================
-   GOOGLE FONTS
-=================================*/
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap');
-
-/* ===============================
    GLOBAL RESET
 =================================*/
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+html{
     scroll-behavior:smooth;
 }
 
-/* ===============================
-   PAGE FADE-IN
-=================================*/
 body{
-    font-family:'Inter', sans-serif;
+    font-family: "Georgia", serif;
     background:#f8f6f2;
-    color:#1f2933;
-    line-height:1.7;
-    padding-top:70px;
-
-    opacity:0;
-    animation: pageFade 0.9s ease forwards;
-}
-
-@keyframes pageFade{
-    to{
-        opacity:1;
-    }
+    color:#222;
+    line-height:1.8;
+    transition:0.3s ease;
 }
 
 /* ===============================
@@ -41,20 +27,13 @@ body{
     top:0;
     left:0;
     width:100%;
-    height:70px;
-    padding:0 10%;
+    background:#1e1e1e;
+    color:white;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:#0f172a;
-    z-index:99999;
-}
-
-.logo{
-    font-family:'Playfair Display', serif;
-    font-size:20px;
-    color:#f8f6f2;
-    letter-spacing:1px;
+    padding:20px 8%;
+    z-index:1000;
 }
 
 .navbar ul{
@@ -65,96 +44,85 @@ body{
 
 .navbar a{
     text-decoration:none;
-    color:#e5e7eb;
-    font-size:14px;
-    position:relative;
-    transition:0.3s ease;
-}
-
-.navbar a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-4px;
-    width:0%;
-    height:2px;
-    background:#c6a75e;
-    transition:0.3s ease;
+    color:white;
+    font-size:15px;
+    letter-spacing:0.5px;
+    transition:0.3s;
 }
 
 .navbar a:hover{
-    color:#ffffff;
+    color:#c6a75e;
 }
 
-.navbar a:hover::after{
-    width:100%;
+.logo{
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.toggle{
+    cursor:pointer;
+}
+
+/* ===============================
+   GOLD SCROLL LINE
+=================================*/
+.scroll-line{
+    position:fixed;
+    top:0;
+    left:0;
+    height:3px;
+    background:#c6a75e;
+    width:0%;
+    z-index:2000;
 }
 
 /* ===============================
    HERO SECTION
 =================================*/
 .hero{
-    height:85vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:0 20px;
-    background:linear-gradient(to bottom,#f8f6f2,#ece9e1);
+    padding:180px 12% 120px;
+    text-align:left;
 }
 
 .hero h1{
-    font-family:'Playfair Display', serif;
-    font-size:42px;
+    font-size:38px;
     margin-bottom:15px;
 }
 
 .hero p{
     font-size:18px;
-    color:#475569;
+    color:#555;
+    margin-bottom:30px;
 }
 
 .btn{
-    margin-top:25px;
-    padding:12px 28px;
-    background:#0f172a;
-    color:#ffffff;
-    border-radius:30px;
     text-decoration:none;
+    background:#1e1e1e;
+    color:white;
+    padding:12px 28px;
     font-size:14px;
     letter-spacing:1px;
-    transition:0.3s ease;
+    transition:0.3s;
 }
 
 .btn:hover{
     background:#c6a75e;
-    color:#0f172a;
+    color:#1e1e1e;
 }
 
 /* ===============================
    SECTIONS
 =================================*/
 .section{
-  .section{
-    min-height:100vh;
     padding:120px 12%;
     max-width:1100px;
     margin:auto;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-
-    scroll-margin-top:120px;  /* ADD THIS */
+    scroll-margin-top:120px;
+    border-bottom:1px solid rgba(0,0,0,0.06);
 
     opacity:0;
     transform:translateY(30px);
     transition:0.6s ease;
-} 
-}
-
-.serction;nth-of-type(even){
-   background:#f1eee8;
 }
 
 .section.show{
@@ -163,9 +131,8 @@ body{
 }
 
 .section h2{
-    font-family:'Playfair Display', serif;
     font-size:28px;
-    margin-bottom:25px;
+    margin-bottom:40px;
     position:relative;
 }
 
@@ -175,77 +142,77 @@ body{
     width:60px;
     height:2px;
     background:#c6a75e;
-    margin-top:10px;
-}
-
-.section ul{
-    margin-left:20px;
-}
-
-.section li{
-    margin-bottom:10px;
+    margin-top:12px;
 }
 
 /* ===============================
-   TIMELINE (Internships)
+   EDUCATION
+=================================*/
+.section p{
+    margin-bottom:18px;
+    font-size:17px;
+}
+
+/* ===============================
+   TIMELINE (INTERNSHIPS)
 =================================*/
 .timeline{
-    position: relative;
-    margin-top: 40px;
-    padding-left: 50px;  /* more breathing space */
+    position:relative;
+    padding-left:40px;
 }
 
 .timeline::before{
-    content: "";
-    position: absolute;
-    left: 18px;
-    top: 0;
-    width: 2px;
-    height: 100%;
-    background: #c6a75e;
+    content:"";
+    position:absolute;
+    left:10px;
+    top:0;
+    width:2px;
+    height:100%;
+    background:#c6a75e;
 }
 
 .timeline-item{
-    position: relative;
-    margin-bottom: 45px;
+    position:relative;
+    margin-bottom:70px;
 }
 
 .timeline-dot{
-    position: absolute;
-    left: 12px;
-    top: 6px;
-    width: 14px;
-    height: 14px;
-    background: #c6a75e;
-    border-radius: 50%;
-}
-
-.timeline-content{
-    padding-left: 25px;
+    position:absolute;
+    left:-2px;
+    top:8px;
+    width:14px;
+    height:14px;
+    background:#c6a75e;
+    border-radius:50%;
 }
 
 .timeline-content h3{
-    font-family:'Playfair Display', serif;
-    margin-bottom: 5px;
+    font-size:19px;
+    margin-bottom:6px;
 }
 
 .timeline-content span{
-    font-size: 13px;
-    color: #64748b;
-    display: block;
-    margin-bottom: 8px;
+    font-size:14px;
+    color:#777;
+    display:block;
+    margin-bottom:15px;
 }
+
+.timeline-content p{
+    font-size:16px;
+    color:#444;
+}
+
 /* ===============================
-   SCROLL GOLD PROGRESS LINE
+   RESEARCH LIST
 =================================*/
-.scroll-line{
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 3px;
-    width: 0%;
-    background: #c6a75e;
-    z-index: 100000;
+.section ul{
+    padding-left:20px;
+}
+
+.section ul li{
+    margin-bottom:14px;
+    font-size:16px;
 }
 
 /* ===============================
@@ -253,25 +220,34 @@ body{
 =================================*/
 footer{
     text-align:center;
-    padding:30px;
-    background:#0f172a;
-    color:#cbd5e1;
+    padding:40px;
     font-size:14px;
+    background:#1e1e1e;
+    color:white;
 }
 
 /* ===============================
-   RESPONSIVE
+   LIGHT MODE
 =================================*/
-@media(max-width:768px){
-    .navbar ul{
-        gap:15px;
-    }
+body.light{
+    background:#1e1e1e;
+    color:#f2f2f2;
+}
 
-    .hero h1{
-        font-size:30px;
-    }
+body.light .navbar{
+    background:#111;
+}
 
-    .section{
-        padding:70px 8%;
-    }
+body.light .btn{
+    background:#f2f2f2;
+    color:#111;
+}
+
+body.light .btn:hover{
+    background:#c6a75e;
+    color:#111;
+}
+
+body.light .section{
+    border-bottom:1px solid rgba(255,255,255,0.08);
 }
