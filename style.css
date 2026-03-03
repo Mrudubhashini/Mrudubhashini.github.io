@@ -192,23 +192,36 @@ body{
 .timeline{
     position: relative;
     margin-top: 40px;
-    padding-left: 30px;
-    border-left: 2px solid #c6a75e;
+    padding-left: 50px;  /* more breathing space */
+}
+
+.timeline::before{
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: #c6a75e;
 }
 
 .timeline-item{
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
 }
 
 .timeline-dot{
     position: absolute;
-    left: -10px;
-    top: 5px;
+    left: 12px;
+    top: 6px;
     width: 14px;
     height: 14px;
     background: #c6a75e;
     border-radius: 50%;
+}
+
+.timeline-content{
+    padding-left: 25px;
 }
 
 .timeline-content h3{
@@ -222,7 +235,6 @@ body{
     display: block;
     margin-bottom: 8px;
 }
-
 /* ===============================
    SCROLL GOLD PROGRESS LINE
 =================================*/
